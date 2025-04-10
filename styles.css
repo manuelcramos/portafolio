@@ -75,13 +75,54 @@
     margin-bottom: 1rem;
   }
   
-  .proyecto {
-    margin-bottom: 2rem;
-    background: #f4f4f4;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
+  /* Sección Proyectos */
+#proyectos {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Azul tipo Windows antiguo */
+    text-align: center;
+    }
+    
+    #proyectos h2 {
+    font-size: 2em;
+    color: #080808; /* Título en azul claro */
+    margin-bottom: 30px;
+    }
+    
+    .galeria {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    }
+    
+    .proyecto {
+    background: #79a3f1; /* Azul claro para los proyectos */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    width: 300px;
+    }
+    
+    .proyecto:hover {
+    transform: translateY(-10px); /* Levantamiento al pasar el ratón */
+    transform: scale(1.25);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .proyecto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    }
+    
+    .proyecto h3 {
+    font-size: 1.5em;
+    color: #E0E0E0; /* Título en azul claro */
+    font-weight: 600;
+    }
+  
   
   /* Footer */
   footer {
