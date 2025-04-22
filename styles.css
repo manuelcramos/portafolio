@@ -150,4 +150,24 @@
   }
 
 
-
+  .foto-perfil {
+    width: 200px;
+    height: auto;
+    border: 5px solid #4CAF50; /* color verde llamativo */
+    border-radius: 15px; /* bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* sombra suave */
+    transition: transform 0.3s ease;
+    margin-right: 20px;
+  }
+  
+  .foto-perfil:hover {
+    transform: scale(1.05);
+  }
+  
+  .sobre-mi-contenido {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
