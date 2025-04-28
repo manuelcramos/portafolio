@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mi Portafolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
+  <header class="parallax" id="hero">
     <nav class="navbar">
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -28,47 +25,43 @@
   </header>
 
   <main>
-    <section id="sobre-mi">
+    <section id="sobre-mi" class="parallax">
       <h2>Sobre mí</h2>
       <div class="sobre-mi-contenido">
         <img src="images/foto.png" alt="Foto de Manuel C. Ramos" class="foto-perfil" />
         <p>Soy un desarrollador apasionado por la tecnología y el diseño web. Me encanta crear experiencias digitales útiles y atractivas.</p>
       </div>
     </section>
-    
 
-     <!-- Sección de proyectos -->
-     <section id="proyectos">
-        <h2>Proyectos</h2>
-        <div class="galeria">
-            <div class="proyecto">
-                <h3>Web</h3>
-                <img src="images/imagen1.webp" alt="Un ordenador en una mesa de oficina">
-                <p>Página Web de Fina</p>
-                <a href="enlace-al-proyecto1" class="btn">Ver Clases</a>
-            </div>
-            <div class="proyecto">
-                <h3>Multimedia</h3>
-                <img src="images/diw.png" alt="Un logo de CSS sobre fondo rojo">
-                <p>Video creado para el concurso</p>
-                <a href="enlace-al-proyecto2" class="btn">Ver Clases</a>
-            </div>
+    <section id="proyectos" class="parallax">
+      <h2>Proyectos</h2>
+      <div class="galeria">
+        <div class="proyecto">
+          <h3>Web</h3>
+          <img src="images/imagen1.webp" alt="Un ordenador en una mesa de oficina">
+          <p>Página Web de Fina</p>
+          <a href="enlace-al-proyecto1" class="btn">Ver Clases</a>
         </div>
+        <div class="proyecto">
+          <h3>Multimedia</h3>
+          <img src="images/diw.png" alt="Un logo de CSS sobre fondo rojo">
+          <p>Video creado para el concurso</p>
+          <a href="enlace-al-proyecto2" class="btn">Ver Clases</a>
+        </div>
+      </div>
     </section>
-    
 
-    <section id="contacto">
+    <section id="contacto" class="parallax">
       <h2>Contacto</h2>
       <p>Puedes contactarme a través de mi correo electrónico o en mis redes sociales.</p>
       <p>Email: <a href="mailto:manucr18@gmail.com">manucr18@gmail.com</a></p>
     </section>
 
-    <section id="curriculum">
+    <section id="curriculum" class="parallax">
       <h2>Currículum</h2>
       <p>Puedes ver o descargar mi CV aquí:</p>
       <a href="curriculum.pdf" download class="btn">Descargar CV</a>
     </section>
-    
   </main>
 
   <footer>

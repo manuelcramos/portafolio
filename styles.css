@@ -1,173 +1,175 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    font-family: "charm", sans-serif;
-    font-size: 33px;
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body, html {
+  font-family: "Charm", sans-serif;
+  font-size: 30px;
+  scroll-behavior: smooth;
+}
+
+/* Parallax general */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 8rem 2rem;
+  color: white;
+  text-align: center;
+  min-height: 120vh; /* más alto que el alto de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   }
   
-  /* Navbar */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 1rem 2rem;
-    z-index: 1000;
-  }
-  
-  .navbar ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
-  
-  .navbar li {
-    margin: 0 1.5rem;
-  }
-  
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #00ffff;
-  }
-  
-  /* Hero background */
-  header {
-    height: 100vh;
-    background-image: url("fondo.gif");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 60px; /* Compensa la barra fija */
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
-  
-  /* Secciones */
-  main section {
-    padding: 4rem 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* Sección Proyectos */
+
+
+/* Fondos diferentes por sección */
+#hero {
+  background-image: url("fondo.gif");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+#sobre-mi {
+  background-image: url("images/cascada1.gif");
+}
+
 #proyectos {
-    padding: 60px 20px;
-    background-color: #ffffff; /* Azul tipo Windows antiguo */
-    text-align: center;
-    }
-    
-    #proyectos h2 {
-    font-size: 2em;
-    color: #080808; /* Título en azul claro */
-    margin-bottom: 30px;
-    }
-    
-    .galeria {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    }
-    
-    .proyecto {
-    background: #79a3f1; /* Azul claro para los proyectos */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    width: 300px;
-    }
-    
-    .proyecto:hover {
-    transform: translateY(-10px); /* Levantamiento al pasar el ratón */
-    transform: scale(1.25);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    }
-    
-    .proyecto img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    }
-    
-    .proyecto h3 {
-    font-size: 1.5em;
-    color: #E0E0E0; /* Título en azul claro */
-    font-weight: 600;
-    }
-  
-  
-  /* Footer */
-  footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 0;
-  }
-  
-  .footer-links a {
-    color: #00ffff;
-    margin: 0 1rem;
-    text-decoration: none;
-  }
-  
-  .charm-regular {
-    font-family: "Charm", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+  background-image: url("images/cascada2.gif");
+}
 
+#contacto {
+  background-image: url("images/cascada3.gif");
+}
 
-  .foto-perfil {
-    width: 200px;
-    height: auto;
-    border: 5px solid #4CAF50; /* color verde llamativo */
-    border-radius: 15px; /* bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* sombra suave */
-    transition: transform 0.3s ease;
-    margin-right: 20px;
-  }
-  
-  .foto-perfil:hover {
-    transform: scale(1.05);
-  }
-  
-  .sobre-mi-contenido {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
+#curriculum {
+  background-image: url("images/cascada4.gif");
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar li {
+  margin: 0 1.5rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #00ffff;
+}
+
+/* Secciones internas */
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.sobre-mi-contenido {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.foto-perfil {
+  width: 200px;
+  height: auto;
+  border: 5px solid #4CAF50;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);
+}
+
+/* Proyectos */
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.proyecto {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+}
+
+.proyecto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.proyecto h3 {
+  font-size: 1.5em;
+  color: #E0E0E0;
+}
+
+/* Botón */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00ffff;
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.footer-links a {
+  color: #00ffff;
+  margin: 0 1rem;
+  text-decoration: none;
+}
