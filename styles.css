@@ -117,37 +117,45 @@ section h2 {
 /* Proyectos */
 .galeria {
   display: flex;
-  justify-content: center;
-  gap: 40px;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  justify-content: center;
+  gap: 30px; /* espacio entre los proyectos */
+  padding: 20px 0;
 }
 
 .proyecto {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-  width: 300px;
-  transition: transform 0.3s ease;
+  width: 300px; /* o 100% max 300px para hacerlo responsive */
+  text-align: center;
 }
 
-.proyecto:hover {
-  transform: scale(1.05);
+.video-thumbnail {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.proyecto img {
+.video-thumbnail img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  display: block;
 }
 
-.proyecto h3 {
-  font-size: 1.5em;
-  color: #E0E0E0;
+.play-button {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 15px;
+  color: white;
+  font-size: 24px;
+  transition: background 0.3s ease;
 }
+
+.video-thumbnail:hover .play-button {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 
 /* Botón */
 .btn {
@@ -158,6 +166,40 @@ section h2 {
   color: #000;
   border-radius: 8px;
   text-decoration: none;
+}
+.botones-cv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.btn-cv {
+  font-size: 15px;
+  padding: 10px 20px;
+  min-width: 120px;
+  max-width: 180px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn-cv:hover {
+  background-color: #0056b3;
+}
+
+.btn-cv i {
+  font-size: 16px;
 }
 
 /* Footer */
@@ -172,4 +214,69 @@ footer {
   color: #00ffff;
   margin: 0 1rem;
   text-decoration: none;
+}
+
+.video-thumbnail {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  padding: 15px;
+  color: white;
+  font-size: 24px;
+  transition: background 0.3s;
+}
+
+.video-thumbnail:hover .play-button {
+  background: rgba(0,0,0,0.8);
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal .cerrar {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
 }

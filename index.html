@@ -6,6 +6,8 @@
   <title>Mi Portafolio</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -37,19 +39,62 @@
       <h2>Proyectos</h2>
       <div class="galeria">
         <div class="proyecto">
-          <h3>Web</h3>
-          <img src="images/imagen1.webp" alt="Un ordenador en una mesa de oficina">
-          <p>Página Web de Fina</p>
-          <a href="enlace-al-proyecto1" class="btn">Ver Clases</a>
+          <h3>Video Concurso 1</h3>
+          <div class="video-thumbnail" onclick="abrirModalYoutube('https://www.youtube.com/embed/kdjNfoLL9Mw')">
+            <img src="https://img.youtube.com/vi/kdjNfoLL9Mw/hqdefault.jpg" alt="Miniatura del video">
+            <span class="play-button"><i class="fas fa-play"></i></span>
+          </div>
+          <p>"Adicciones: Tu punto de mira"</p>
         </div>
+    
         <div class="proyecto">
-          <h3>Multimedia</h3>
-          <img src="images/diw.png" alt="Un logo de CSS sobre fondo rojo">
-          <p>Video creado para el concurso</p>
-          <a href="enlace-al-proyecto2" class="btn">Ver Clases</a>
+          <h3>Video Concurso 2</h3>
+          <div class="video-thumbnail" onclick="abrirModalYoutube('https://www.youtube.com/embed/RmdCqzO0woA')">
+            <img src="https://img.youtube.com/vi/RmdCqzO0woA/hqdefault.jpg" alt="Miniatura del video">
+            <span class="play-button"><i class="fas fa-play"></i></span>
+          </div>
+          <p>El rap que desconecta</p>
         </div>
       </div>
     </section>
+    
+    
+    
+    
+    
+    <div id="modalVideo" class="modal">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <div class="video-container">
+        <iframe id="youtubeFrame" width="800" height="450" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    
+    
+    <script>
+      function abrirModalYoutube(url) {
+        const modal = document.getElementById("modalVideo");
+        const frame = document.getElementById("youtubeFrame");
+        frame.src = url + "?autoplay=1";
+        modal.style.display = "flex";
+      }
+    
+      function cerrarModal() {
+        const modal = document.getElementById("modalVideo");
+        const frame = document.getElementById("youtubeFrame");
+        frame.src = "";
+        modal.style.display = "none";
+      }
+    
+      window.onclick = function(event) {
+        const modal = document.getElementById("modalVideo");
+        if (event.target == modal) {
+          cerrarModal();
+        }
+      };
+    </script>
+    
+    
 
     <section id="contacto" class="parallax">
       <h2>Contacto</h2>
@@ -60,8 +105,49 @@
     <section id="curriculum" class="parallax">
       <h2>Currículum</h2>
       <p>Puedes ver o descargar mi CV aquí:</p>
-      <a href="curriculum.pdf" download class="btn">Descargar CV</a>
+      <div class="botones-cv">
+        <a href="curriculum.pdf" download class="btn btn-cv">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <button class="btn btn-cv" onclick="abrirModalCV()">
+          <i class="fas fa-eye"></i> Ver
+        </button>
+      </div>
     </section>
+    
+    <!-- Modal para ver el CV -->
+    <div id="modalCV" class="modal">
+      <span class="cerrar" onclick="cerrarModalCV()">&times;</span>
+      <iframe id="cvViewer" src="" frameborder="0" width="80%" height="80%"></iframe>
+    </div>
+
+    <script>
+      function abrirModalCV() {
+        document.getElementById("cvViewer").src = "curriculum.pdf";
+        document.getElementById("modalCV").style.display = "block";
+      }
+    
+      function cerrarModalCV() {
+        const modal = document.getElementById("modalCV");
+        document.getElementById("cvViewer").src = "";
+        modal.style.display = "none";
+      }
+    
+      window.onclick = function(event) {
+        const modalCV = document.getElementById("modalCV");
+        if (event.target == modalCV) {
+          cerrarModalCV();
+        }
+      };
+    </script>
+  <script>
+    fetch('https://api.countapi.xyz/hit/https://github.com/manuelcramos/visitas')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('visitCounter').innerText = 'Visitas: ' + data.value;
+      });
+  </script>
+
   </main>
 
   <footer>
@@ -70,7 +156,14 @@
       <a href="https://github.com/manuelcramos" target="_blank">GitHub</a>
       <a href="mailto:manucr18@gmail.com">Email</a>
     </div>
+    <div id="visitCounter">Visitas: cargando...</div>
   </footer>
 
 </body>
 </html>
+
+
+
+
+
+
