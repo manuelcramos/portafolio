@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mi Portafolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+   <!--Para poner de fuente Google Fonts-->
+   <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+<!--Para importar iconos de Font Awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
+
 <body>
 
   <header class="parallax" id="hero">
     <nav class="navbar">
+      <!--La parte de ol es para crear la lista y li es para poner un texto normal en la lista-->
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
@@ -27,21 +31,27 @@
   </header>
 
   <main>
+    <!--El setion es para una agrupación y el id es un nombre especifico que le doy a la seccion-->
     <section id="sobre-mi" class="parallax">
-      <h2>Sobre mí</h2>
+      <!--El h2 es un nombre de un titulo-->
+      <!--El titulo-scroll es para la clase se use para animaciones o estilos-->
+      <h2 class="titulo-scroll">Sobre mí</h2>
       <div class="sobre-mi-contenido">
+        <!-- es para poner la imagen-->
         <img src="images/foto.png" alt="Foto de Manuel C. Ramos" class="foto-perfil" />
         <p>Soy un desarrollador apasionado por la tecnología y el diseño web. Me encanta crear experiencias digitales útiles y atractivas.</p>
       </div>
     </section>
 
     <section id="proyectos" class="parallax">
-      <h2>Proyectos</h2>
+      <h2 class="titulo-scroll">Proyectos</h2>
       <div class="galeria">
         <div class="proyecto">
           <h3>Video Concurso 1</h3>
+          <!-- Es todo es para ver una miniatura del video-->
           <div class="video-thumbnail" onclick="abrirModalYoutube('https://www.youtube.com/embed/kdjNfoLL9Mw')">
             <img src="https://img.youtube.com/vi/kdjNfoLL9Mw/hqdefault.jpg" alt="Miniatura del video">
+            <!--span es para poner estilos en una parte concreta del archivo de html -->
             <span class="play-button"><i class="fas fa-play"></i></span>
           </div>
           <p>"Adicciones: Tu punto de mira"</p>
@@ -59,33 +69,37 @@
     </section>
     
     
-    
-    
-    
     <div id="modalVideo" class="modal">
+      <!-- Es para crear un boton de cierre-->
       <span class="cerrar" onclick="cerrarModal()">&times;</span>
       <div class="video-container">
+<!--Es para poner el video de youtube-->
+<!--id es un identificador-->
+<!--inframe es util si deseas acceder desde el javaScript o CSS-->
         <iframe id="youtubeFrame" width="800" height="450" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-    
-    
-    
-    <script>
+ <!-- modal Es una funcion de que se ejecuta cuando se llama-->   
+ <!--frame la funcion toma un parametro url-->   
+ <!-- Este parametro  modal.style.display es para ocultar el modal-->
+   <script>
+      <!--abrirModalYoutube(url) es una función que se ejecuta cuando se llama. La función toma un parámetro: url. Este parámetro será la URL del video de YouTube que se quiere mostrar en el modal -->
       function abrirModalYoutube(url) {
         const modal = document.getElementById("modalVideo");
         const frame = document.getElementById("youtubeFrame");
         frame.src = url + "?autoplay=1";
         modal.style.display = "flex";
       }
-    
+      
       function cerrarModal() {
         const modal = document.getElementById("modalVideo");
         const frame = document.getElementById("youtubeFrame");
         frame.src = "";
         modal.style.display = "none";
-      }
-    
+      } 
+  <!-- obtener el modal-->  
+  <!--Verificar si el clic ocurrió en el área del modal -->
+  <!--Llamar a la función cerrarModal para cerrar el modal-->
       window.onclick = function(event) {
         const modal = document.getElementById("modalVideo");
         if (event.target == modal) {
@@ -94,21 +108,26 @@
       };
     </script>
     
-    
-
+    <!--Define una sección del documento HTML. En este caso, es la sección de contacto. -->
+    <!--El id es un identificador -->
+    <!--Asigna una llamada parallax a la sección -->
     <section id="contacto" class="parallax">
-      <h2>Contacto</h2>
+      <h2 class="titulo-scroll">Contacto</h2>
       <p>Puedes contactarme a través de mi correo electrónico o en mis redes sociales.</p>
+      <!--Es un enlace al correo electrónico -->
       <p>Email: <a href="mailto:manucr18@gmail.com">manucr18@gmail.com</a></p>
     </section>
 
     <section id="curriculum" class="parallax">
-      <h2>Currículum</h2>
+      <h2 class="titulo-scroll">Currículum</h2>
       <p>Puedes ver o descargar mi CV aquí:</p>
       <div class="botones-cv">
-        <a href="curriculum.pdf" download class="btn btn-cv">
-          <i class="fas fa-download"></i> Descargar
+        <a href="e:\portafolio\curriculum vitae manuel campos ramos.pdf" download class="btn btn-cv">
+      <!-- la i es es una etiqueta para mostrar iconos-->
+      <!-- La a es para crear enlaces-->    
+      <i class="fas fa-download"></i> Descargar
         </a>
+      <!--Es para un botton interativo -->
         <button class="btn btn-cv" onclick="abrirModalCV()">
           <i class="fas fa-eye"></i> Ver
         </button>
@@ -118,12 +137,19 @@
     <!-- Modal para ver el CV -->
     <div id="modalCV" class="modal">
       <span class="cerrar" onclick="cerrarModalCV()">&times;</span>
+    <!--infrade es para mostrar un pdf -->
       <iframe id="cvViewer" src="" frameborder="0" width="80%" height="80%"></iframe>
     </div>
 
+<!--Busca el elemento con ID cvViewer, que es un <iframe> -->
+<!--Le asigna el archivo "curriculum.pdf" como su contenido -->
+<!--Resultado: El iframe carga y muestra el archivo PDF. -->
+<!--Busca el contenedor del modal (debe tener el ID modalCV) -->
+<!--Cambia su estilo para que se muestre (display: block), en lugar de estar oculto -->
+
     <script>
       function abrirModalCV() {
-        document.getElementById("cvViewer").src = "curriculum.pdf";
+        document.getElementById("cvViewer").src = "curriculum vitae manuel campos ramos.pdf";
         document.getElementById("modalCV").style.display = "block";
       }
     
@@ -140,6 +166,12 @@
         }
       };
     </script>
+
+<!--fetch Hace una solicitud a la API de CountAPI para sumar 1 visita. -->
+<!--.then(response => response.json()) Convierte la respuesta a formato JSON.-->
+<!--.then(data => { ... }) Usa los datos recibidos para mostrar el contador -->
+<!--data.value Es el número total de visitas actual -->
+<!--document.getElementById('visitCounter')...  Inserta ese número en un elemento HTML con id="visitCounter"-->
   <script>
     fetch('https://api.countapi.xyz/hit/https://github.com/manuelcramos/visitas')
       .then(response => response.json())
@@ -149,8 +181,14 @@
   </script>
 
   </main>
-
-  <footer>
+<!-- Muestra el texto de derechos de autor -->
+<!--&copy; es el símbolo de © (copyright) -->
+<!--2025 Mi Portafolio" es un texto personalizado -->
+<!--Tu GitHub, que se abre en una nueva pestaña (target="_blank"). -->
+<!--Tu correo electrónico, que abre el cliente de email con tu dirección prellenada -->
+<!--Este div es donde el contador de visitas (con JavaScript y CountAPI) colocará el número actual de visitas. -->  
+<!--El texto "Visitas: cargando..." se mostrará hasta que se cargue el número real. -->
+<footer>
     <p>&copy; 2025 Mi Portafolio</p>
     <div class="footer-links">
       <a href="https://github.com/manuelcramos" target="_blank">GitHub</a>
@@ -159,6 +197,23 @@
     <div id="visitCounter">Visitas: cargando...</div>
   </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("titulo-visible");
+            observer.unobserve(entry.target); // evita que se repita
+          }
+        });
+      }, { threshold: 0.5 });
+  
+      document.querySelectorAll('.titulo-scroll').forEach(titulo => {
+        observer.observe(titulo);
+      });
+    });
+  </script>
+  
 </body>
 </html>
 
