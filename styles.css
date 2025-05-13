@@ -28,15 +28,25 @@ body, html {
   
 
 
-/* Fondos diferentes por sección */
-#hero {
-  background-image: url("fondo.gif");
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
+/* Estilo para la sección hero */
+.hero {
+  background-image: url("fondo.gif");   /* Fondo específico de la hero */
+  background-size: cover;               /* Asegura que el fondo cubra toda la sección */
+          
+  position: relative;                   /* Asegura que el contenido se posicione encima del fondo */
+  z-index: 1;                           /* El contenido va por encima del fondo */
+  padding: 100px 20px;                  /* Espaciado dentro de la sección */
+  color: white;                         /* Color de texto */
+  text-align: center;                   /* Centra el texto */
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
 }
 
 #sobre-mi {
@@ -364,5 +374,39 @@ header {
   padding: 10px 20px;
   background-color: #222; /* solo ejemplo */
   color: white;
+}
+
+/* Fondo translúcido para mejorar legibilidad del texto */
+.tarjeta {
+  background-color: rgba(0, 0, 0, 0.6); /* fondo negro translúcido */
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Mejora de animación para títulos al hacer scroll */
+.titulo-scroll {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  font-size: 3rem; /* más grande */
+  font-weight: bold;
+  letter-spacing: 1px;
+  will-change: opacity, transform;
+}
+
+.titulo-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Ajuste global de tamaño base de fuente */
+body {
+  font-size: 32px; /* un poco más grande que antes */
+  line-height: 1.6;
+  color: #fff;
 }
 

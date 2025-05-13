@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portafolio</title>
+  <title>Manuel C. Ramos Portafolio</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,55 +11,75 @@
 
 <body>
 
+
+
   <!-- Sección de encabezado con música de fondo -->
-  <header class="parallax" id="hero">
+  <header class="parallax" id="inicio">
     <nav class="navbar">
       <ul>
+        <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#curriculum">Currículum</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#curriculum">Currículum</a></li>
       </ul>
-      <!-- Sección de control de música -->
-      <div id="audio-control">
-        <!-- Botón Play/Pause -->
-        <button id="botonMusica" title="Activar/Pausar música">
-          <i class="fas fa-play"></i> <!-- Ícono de Play por defecto -->
-        </button>
 
-        <!-- Control deslizante de volumen -->
+      <!-- Controles de música -->
+      <div id="audio-control">
+        <button id="botonMusica" title="Activar/Pausar música">
+          <i class="fas fa-play"></i>
+        </button>
         <label for="volumen" style="color: white;">Volumen</label>
         <input type="range" id="volumen" min="0" max="1" step="0.1" value="0.5">
-
         <audio id="musicaFondo" loop>
           <source src="musicaFondo.mp3" type="audio/mpeg">
         </audio>
       </div>
     </nav>
+
+    <!-- Hero Section -->
     <div class="hero">
-      <h1>Bienvenido a mi Web,</h1>
+      <h1>Bienvenid@s a mi Web</h1>
       <p>Soy Manuel C. Ramos, explora mis proyectos y conoce más sobre mí</p>
     </div>
   </header>
 
-  <!-- Sección "Sobre mí" -->
+  <!-- Main Content -->
   <main>
+    
+    <!-- Sección Sobre mí -->
     <section id="sobre-mi" class="parallax">
       <h2 class="titulo-scroll">Sobre mí</h2>
-      <div class="sobre-mi-contenido">
+      <div class="contenido-sobre-mi">
         <img src="images/foto.png" alt="Foto de Manuel C. Ramos" class="foto-perfil" />
         <p>Soy un desarrollador apasionado por la tecnología y el diseño web. Me encanta crear experiencias digitales útiles y atractivas.</p>
       </div>
     </section>
 
-    <!-- Sección "Proyectos" -->
+    <!-- Sección Currículum -->
+    <section id="curriculum" class="parallax">
+      <h2 class="titulo-scroll">Currículum</h2>
+      <div class="contenido-cv">
+        <p>Puedes ver o descargar mi CV aquí:</p>
+        <div class="botones-cv">
+          <a href="curriculum vitae manuel campos ramos.pdf" download class="btn btn-cv">
+            <i class="fas fa-download"></i> Descargar
+          </a>
+          <a href="curriculum vitae manuel campos ramos.pdf" target="_blank" class="btn btn-cv">
+            <i class="fas fa-eye"></i> Ver en línea
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Proyectos -->
     <section id="proyectos" class="parallax">
       <h2 class="titulo-scroll">Proyectos</h2>
       <div class="galeria">
         <div class="proyecto">
           <h3>Video Concurso 1</h3>
           <div class="video-thumbnail" onclick="abrirModalYoutube('https://www.youtube.com/embed/kdjNfoLL9Mw')">
-            <img src="https://img.youtube.com/vi/kdjNfoLL9Mw/hqdefault.jpg" alt="Miniatura del video">
+            <img src="https://img.youtube.com/vi/kdjNfoLL9Mw/hqdefault.jpg" alt="Miniatura del video 1">
             <span class="play-button"><i class="fas fa-play"></i></span>
           </div>
           <p>"Adicciones: Tu punto de mira"</p>
@@ -67,7 +87,7 @@
         <div class="proyecto">
           <h3>Video Concurso 2</h3>
           <div class="video-thumbnail" onclick="abrirModalYoutube('https://www.youtube.com/embed/RmdCqzO0woA')">
-            <img src="https://img.youtube.com/vi/RmdCqzO0woA/hqdefault.jpg" alt="Miniatura del video">
+            <img src="https://img.youtube.com/vi/RmdCqzO0woA/hqdefault.jpg" alt="Miniatura del video 2">
             <span class="play-button"><i class="fas fa-play"></i></span>
           </div>
           <p>El rap que desconecta</p>
@@ -75,79 +95,55 @@
       </div>
     </section>
 
-    <!-- Modal para videos -->
-    <div id="modalVideo" class="modal"> 
+    <!-- Modal de video -->
+    <div id="modalVideo" class="modal">
       <span class="cerrar" onclick="cerrarModal()">&times;</span>
       <div class="video-container">
         <iframe id="youtubeFrame" width="800" height="450" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
 
-    <!-- Sección "Contacto" -->
+    <!-- Sección Contacto -->
     <section id="contacto" class="parallax">
       <h2 class="titulo-scroll">Contacto</h2>
-      <p>Puedes contactarme a través de mi correo electrónico o en mis redes sociales.</p>
-      <p>Email: <a href="mailto:manucr18@gmail.com">manucr18@gmail.com</a></p>
-    </section>
-
-    <!-- Sección "Currículum" -->
-    <section id="curriculum" class="parallax">
-      <h2 class="titulo-scroll">Currículum</h2>
-      <p>Puedes ver o descargar mi CV aquí:</p>
-      <div class="botones-cv">
-        <a href="e:\portafolio\curriculum vitae manuel campos ramos.pdf" download class="btn btn-cv">
-          <i class="fas fa-download"></i> Descargar
-        </a>
-        <button class="btn btn-cv" onclick="abrirModalCV()">
-          <i class="fas fa-eye"></i> Ver
-        </button>
+      <div class="contenido-contacto">
+        <p>Puedes contactarme a través de mi correo electrónico o en mis redes sociales.</p>
+        <p>Email: <a href="mailto:manucr18@gmail.com">manucr18@gmail.com</a></p>
       </div>
     </section>
 
-    <!-- Modal para ver el CV -->
-    <div id="modalCV" class="modal">
-      <span class="cerrar" onclick="cerrarModalCV()">&times;</span>
-      <iframe id="cvViewer" src="" frameborder="0" width="80%" height="80%"></iframe>
-    </div>
-
-    <!-- Contador de visitas -->
-    <div id="visitCounter">Visitas: cargando...</div>
   </main>
 
-  <!-- Pie de página -->
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Mi Portafolio</p>
+    <p>&copy; 2025 Manuel C. Ramos</p>
     <div class="footer-links">
       <a href="https://github.com/manuelcramos" target="_blank">GitHub</a>
       <a href="mailto:manucr18@gmail.com">Email</a>
     </div>
   </footer>
 
-  <!-- Script con las funcionalidades de control de música y volumen -->
+  <!-- JavaScript -->
   <script>
-    // Seleccionamos el elemento de audio y el control deslizante
     const audio = document.getElementById('musicaFondo');
     const volumenControl = document.getElementById('volumen');
     const botonMusica = document.getElementById('botonMusica');
 
-    // Ajustamos el volumen del audio al cambiar el valor del control deslizante
-    volumenControl.addEventListener('input', function() {
-      audio.volume = volumenControl.value; // Establece el volumen basado en el valor del control deslizante
+    volumenControl.addEventListener('input', () => {
+      audio.volume = volumenControl.value;
     });
 
-    // Función para reproducir o pausar la música
-    botonMusica.addEventListener('click', function() {
+    botonMusica.addEventListener('click', () => {
       if (audio.paused) {
-        audio.play(); // Si la música está pausada, la reproducimos
-        botonMusica.innerHTML = '<i class="fas fa-pause"></i>'; // Cambiamos el ícono a pausa
+        audio.play();
+        botonMusica.innerHTML = '<i class="fas fa-pause"></i>';
       } else {
-        audio.pause(); // Si la música está reproduciéndose, la pausamos
-        botonMusica.innerHTML = '<i class="fas fa-play"></i>'; // Cambiamos el ícono a play
+        audio.pause();
+        botonMusica.innerHTML = '<i class="fas fa-play"></i>';
       }
     });
 
-    // Activar animación de los títulos al hacer scroll
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -162,12 +158,15 @@
       });
     });
 
-    // Contador de visitas
-    fetch('https://api.countapi.xyz/hit/manuelcramos.github.io/visitas')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('visitCounter').innerText = 'Visitas: ' + data.value;
-      });
+    function abrirModalYoutube(url) {
+      document.getElementById('youtubeFrame').src = url;
+      document.getElementById('modalVideo').style.display = 'block';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modalVideo').style.display = 'none';
+      document.getElementById('youtubeFrame').src = '';
+    }
   </script>
 
 </body>
