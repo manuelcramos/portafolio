@@ -29,40 +29,62 @@ body, html {
 
 
 /* Estilo para la sección hero */
-.hero {
-  background-image: url("fondo.gif");   /* Fondo específico de la hero */
-  background-size: cover;               /* Asegura que el fondo cubra toda la sección */
-          
-  position: relative;                   /* Asegura que el contenido se posicione encima del fondo */
-  z-index: 1;                           /* El contenido va por encima del fondo */
-  padding: 100px 20px;                  /* Espaciado dentro de la sección */
-  color: white;                         /* Color de texto */
-  text-align: center;                   /* Centra el texto */
+#inicio {
+  background-image: url("fondo.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  min-height: 100vh; /* Que cubra la pantalla completa */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  z-index: 1;
 }
 
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
+
+.contenido-hero {
+  
+  text-align: center;
+  max-width: 800px;
+
 }
 
-.hero p {
-  font-size: 1.2em;
+.contenido-hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out;
 }
+
+.contenido-hero p {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
 
 #sobre-mi {
   background-image: url("images/cascada1.gif");
 }
 
 #proyectos {
-  background-image: url("images/cascada2.gif");
-}
-
-#contacto {
   background-image: url("images/cascada3.gif");
 }
 
-#curriculum {
+#contacto {
   background-image: url("images/cascada4.gif");
+}
+
+#curriculum {
+  background-image: url("images/cascada2.gif");
 }
 
 /* Navbar */
@@ -408,5 +430,20 @@ body {
   font-size: 32px; /* un poco más grande que antes */
   line-height: 1.6;
   color: #fff;
+}
+
+@keyframes wobble {
+  0% { transform: translateX(0); }
+  15% { transform: translateX(-8px) rotate(-3deg); }
+  30% { transform: translateX(6px) rotate(3deg); }
+  45% { transform: translateX(-4px) rotate(-2deg); }
+  60% { transform: translateX(2px) rotate(1deg); }
+  75% { transform: translateX(-1px) rotate(-0.5deg); }
+  100% { transform: translateX(0); }
+}
+
+.contenido-hero h1:hover,
+.contenido-hero p:hover {
+  animation: wobble 0.8s ease-in-out;
 }
 
