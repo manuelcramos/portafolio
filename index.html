@@ -50,6 +50,7 @@
       <h2 class="titulo-scroll">Sobre mí</h2>
       <div class="contenido-sobre-mi">
         <img src="images/foto.png" alt="Foto de Manuel C. Ramos" class="foto-perfil" />
+        <div class="bloque-texto-sobre-mi"> <!-- NUEVO DIV -->
         <p>Tengo 30 años. Nací en A Coruña, aunque soy originario de Cee, un lugar al que estoy profundamente vinculado. Desde joven, he tenido una gran afición por el deporte, practicando disciplinas como fútbol sala, hockey, patinaje de velocidad, taekwondo ITF y kick-boxing. Sin embargo, a los 20 años mi vida dio un giro inesperado cuando me detectaron un tumor cerebral, lo que me obligó a apartarme temporalmente de la actividad física. Desde 2015, pasé largos periodos entrando y saliendo del hospital, y durante esos años me sometí a cerca de 20 intervenciones quirúrgicas. Fue una etapa difícil, pero gracias al apoyo incondicional de mi familia y a una firme voluntad de superación, logré salir adelante. Aunque hoy me encuentro recuperado, debo continuar con revisiones médicas periódicas para mantener un seguimiento adecuado de mi salud. En cuanto a mi formación, cursé el Ciclo Medio de Instalaciones Automáticas en el Instituto Fernando Blanco de Cee. Más recientemente, en 2024, inicié mis estudios en el Ciclo Medio de Sistemas Microinformáticos y Redes, lo que representó mi primer acercamiento al mundo de la informática y el desarrollo web, un ámbito que desde entonces ha despertado en mí un profundo interés</p>
       </div>
     </section>
@@ -121,51 +122,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    const audio = document.getElementById('musicaFondo');
-    const volumenControl = document.getElementById('volumen');
-    const botonMusica = document.getElementById('botonMusica');
-
-    volumenControl.addEventListener('input', () => {
-      audio.volume = volumenControl.value;
-    });
-
-    botonMusica.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        botonMusica.innerHTML = '<i class="fas fa-pause"></i>';
-      } else {
-        audio.pause();
-        botonMusica.innerHTML = '<i class="fas fa-play"></i>';
-      }
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("titulo-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-
-      document.querySelectorAll('.titulo-scroll').forEach(titulo => {
-        observer.observe(titulo);
-      });
-    });
-
-    function abrirModalYoutube(url) {
-      document.getElementById('youtubeFrame').src = url;
-      document.getElementById('modalVideo').style.display = 'block';
-    }
-
-    function cerrarModal() {
-      document.getElementById('modalVideo').style.display = 'none';
-      document.getElementById('youtubeFrame').src = '';
-    }
-  </script>
+<script src="scripts.js"></script>
 
 </body>
 </html>

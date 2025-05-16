@@ -7,7 +7,7 @@
 
 body, html {
   font-family: "Charm", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   scroll-behavior: smooth;
 }
 
@@ -50,11 +50,12 @@ body, html {
 
 
 .contenido-hero {
-  
   text-align: center;
-  max-width: 800px;
-
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+
 
 .contenido-hero h1 {
   font-size: 4rem;
@@ -149,9 +150,11 @@ body, html {
 
 /* Secciones internas */
 section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 2rem;
+  font-size: 180px !important;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
+
 
 .sobre-mi-contenido {
   display: flex;
@@ -442,8 +445,114 @@ body {
   100% { transform: translateX(0); }
 }
 
-.contenido-hero h1:hover,
-.contenido-hero p:hover {
+.contenido-hero h1:hover,.titulo-scroll:hover
+
+{
   animation: wobble 0.8s ease-in-out;
 }
 
+/* Adaptación para responsividad en móviles */
+@media screen and (max-width: 768px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar ul li {
+    flex-grow: 0;
+  }
+
+  .contenido-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .contenido-hero p {
+    font-size: 1.2rem;
+  }
+
+  section h2 {
+    font-size: 2rem !important;
+  }
+
+  .contenido-sobre-mi {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foto-perfil {
+    width: 80%;
+  }
+
+  .galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .proyecto {
+    width: 90%;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal .cerrar {
+    top: 10px;
+    right: 20px;
+    font-size: 32px;
+  }
+
+  .video-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .btn-cv {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  #audio-control {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+.bloque-texto-sobre-mi {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con transparencia */
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;               /* Ocupa todo el ancho disponible */
+  max-width: 1800px;         /* No crece más allá de esto en pantallas grandes */
+  margin: 20px auto;         /* Centrado horizontal con margen vertical */
+  color: white;
+  text-align: center;        /* Centra el texto */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+@media screen and (max-width: 768px) {
+  .contenido-sobre-mi {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .bloque-texto-sobre-mi {
+    width: 90%;
+  }
+}
