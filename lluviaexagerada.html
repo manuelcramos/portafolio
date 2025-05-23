@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Efecto Agua y Nieve Exagerado</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: #113; /* Fondo oscuro */
+    overflow: hidden;
+    color: white;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .contenido {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    font-size: 2rem;
+    padding: 20px;
+  }
+  canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  #nieve {
+    z-index: 5;
+    opacity: 0.8; /* más visible */
+  }
+  #gotas {
+    z-index: 9;
+    opacity: 0.9; /* gotas bien visibles */
+  }
+</style>
+</head>
+<body>
+
+<canvas id="nieve"></canvas>
+<canvas id="gotas"></canvas>
+
+<div class="contenido">
+  <h1>¡Efecto Agua y Nieve Exagerado!</h1>
+  <p>Mira cómo la pantalla parece mojada y nevada.</p>
+</div>
+
+<script>
+// --- Nieve exagerada ---
+const canvasNieve = document.getElementById('nieve');
+const ctxNieve = canvasNieve.getContext('2d');
+let widthN = window.innerWidth;
+let heightN = window.innerHeight;
+canvasNieve.width = widthN;
+canvasNieve.height = heightN;
+
+class CopoNieve {
+  constructor() {
+    this.x = Math.random() * widthN;
+    this.y = Math.random() * heightN;
+    this.size = Math.random() * 2 + 2; // más grande
+    this.speedY = Math.random() * 0.8 + 0.5; // más rápido
+    this.speedX = Math.random() * 0.7 + 0.5;
+    this.opacity = Math.random() * 0.7 + 0.3;
+  }
+  update() {
+    this.y += this.speedY;
+    this.x += this.speedX;
+    if(this.y > heightN) {
+      this.y = -this.size;
+      this.x = Math.random() * widthN;
+    }
+    if(this.x > widthN) this.x = 0;
+    if(this.x < 0) this.x = widthN;
+  }
+  draw() {
+    ctxNieve.fillStyle = `rgba(255,255,255,${this.opacity})`;
+    ctxNieve.beginPath();
+    ctxNieve.arc(this.x, this.y, this.size, 0, Math.PI*2);
+    ctxNieve.fill();
+  }
+}
+
+let copos = [];
+for(let i=0; i<100; i++) { // más cantidad
+  copos.push(new CopoNieve());
+}
+
+function animarNieve() {
+  ctxNieve.clearRect(0,0,widthN,heightN);
+  copos.forEach(c => {
+    c.update();
+    c.draw();
+  });
+  requestAnimationFrame(animarNieve);
+}
+animarNieve();
+
+
+</script>
+
+</body>
+</html>

@@ -183,13 +183,25 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* espacio entre los proyectos */
+  gap: 100px; /* espacio entre los proyectos */
   padding: 20px 0;
 }
 
 .proyecto {
-  width: 300px; /* o 100% max 300px para hacerlo responsive */
-  text-align: center;
+  min-width: 320px;
+  width: 320px;
+  min-height: 400px; /* ajusta según tus necesidades */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);; /* asegúrate de que tenga fondo visible */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* sombra base */
+}
+
+.proyecto:hover {
+  transform: scale(1.45); /* agrandar suavemente */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* sombra más profunda */
+  
 }
 
 .video-thumbnail {
@@ -233,17 +245,38 @@ section h2 {
 }
 .botones-cv {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  gap: 70px; /* <-- Más espacio entre los botones */
   justify-content: center;
-  margin-top: 12px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-cv.grande {
+  font-size: 1.4rem;              /* texto un poco más grande */
+  padding: 40px 100px;             /* menos alto, más ancho */
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  background-color: #007BFF;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  
+  justify-content: center;
+  text-align: center;
+}
+
+/* Efecto hover: color + aumento de tamaño */
+.btn-cv.grande:hover {
+  background-color: #0056b3;
+  transform: scale(1.25);
 }
 
 .btn-cv {
-  font-size: 15px;
-  padding: 10px 20px;
-  min-width: 120px;
-  max-width: 180px;
+  font-size: 16px;
+  padding: 20px 40px;
+  
   background-color: #007bff;
   color: white;
   border: none;
@@ -257,13 +290,21 @@ section h2 {
   transition: background-color 0.3s ease;
   text-align: center;
 }
+/* Centrar contenido dentro de la sección CV */
+.contenido-cv.centrado {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .btn-cv:hover {
   background-color: #0056b3;
 }
 
 .btn-cv i {
-  font-size: 16px;
+  font-size: 46px;
 }
 
 /* Footer */
@@ -275,7 +316,7 @@ footer {
 }
 
 .footer-links a {
-  color: #00ffff;
+  color: #ffffff;
   margin: 0 1rem;
   text-decoration: none;
 }
@@ -430,7 +471,7 @@ header {
 
 /* Ajuste global de tamaño base de fuente */
 body {
-  font-size: 32px; /* un poco más grande que antes */
+  font-size: 36px; /* un poco más grande que antes */
   line-height: 1.6;
   color: #fff;
 }
@@ -555,4 +596,59 @@ body {
   .bloque-texto-sobre-mi {
     width: 90%;
   }
+}
+/*para que las imagenes y videos sean responsive para que se vean bien*/
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .botones-cv {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .btn-cv.grande {
+    width: 90%;          /* Ocupa casi todo el ancho disponible */
+    max-width: 300px;    /* Limita su tamaño para que no se vea enorme */
+  }
+
+  .contenido-sobre-mi,
+  .contenido-cv,
+  .contenido-contacto {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .proyecto {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .video-thumbnail img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* --- Efecto de nieve --- */
+canvas#nieve {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;  /* No bloquea clics ni scroll */
+  z-index: 1;
+  opacity: 0.7;
 }

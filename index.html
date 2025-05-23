@@ -4,12 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manuel C. Ramos Portafolio</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+<!-- Sección de efecto nieve -->
+  <canvas id="nieve"></canvas>
+
 
   <!-- Sección de encabezado con música de fondo -->
   <header class="parallax" id="inicio">
@@ -37,9 +41,9 @@
 
     <!-- Hero Section -->
     <div class="contenido-hero">
-      <h1>Bienvenid@s a mi Web</h1>
+      <h1>Soy Manuel C. Ramos</h1>
       <div class="bloque-texto-sobre-mi"> <!-- NUEVO DIV -->
-      <p>Soy Manuel C. Ramos, explora mis proyectos y conoce más sobre mí</p>
+      <p> Bienvenid@s a mi Web, explora mis proyectos y conoce más sobre mí</p>
     </div>
   </header>
 
@@ -59,25 +63,26 @@
     <!-- Sección Currículum -->
     <section id="curriculum" class="parallax">
       <h2 class="titulo-scroll">Currículum</h2>
-      <div class="contenido-cv">
-        <div class="bloque-texto-sobre-mi"> <!-- NUEVO DIV -->
-        <p>Puedes ver o descargar mi CV aquí:</p>
+      <div class="contenido-cv centrado">
+        <div class="bloque-texto-sobre-mi">
+          <p>Puedes ver o descargar mi CV aquí:</p>
         </div>
         <div class="botones-cv">
-          <a href="curriculum vitae manuel campos ramos.pdf" download class="btn btn-cv">
-            <i class="fas fa-download"></i> Descargar
-          </a>
-          <a href="curriculum vitae manuel campos ramos.pdf" target="_blank" class="btn btn-cv">
+          <a href="curriculum vitae manuel campos ramos.pdf" target="_blank" class="btn btn-cv grande">
             <i class="fas fa-eye"></i> Ver en línea
+          </a>
+          <a href="curriculum vitae manuel campos ramos.pdf" download class="btn btn-cv grande">
+            <i class="fas fa-download"></i> Descargar
           </a>
         </div>
       </div>
     </section>
+    
 
     <!-- Sección Proyectos -->
     <section id="proyectos" class="parallax">
       <h2 class="titulo-scroll">Proyectos</h2>
-      <div class="bloque-texto-sobre-mi"> <!-- NUEVO DIV -->
+      
       <div class="galeria">
         <div class="proyecto">
           <h3>Video Concurso 1</h3>
